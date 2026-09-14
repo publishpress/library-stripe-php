@@ -2,8 +2,8 @@
   'root' => 
   array (
     'name' => 'publishpress/stripe-php',
-    'pretty_version' => '20.3.1.1',
-    'version' => '20.3.1.1',
+    'pretty_version' => '20.3.1.2',
+    'version' => '20.3.1.2',
     'reference' => NULL,
     'type' => 'library',
     'install_path' => __DIR__ . '/../',

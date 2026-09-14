@@ -16,7 +16,7 @@ if (! function_exists('add_action')) {
     return;
 }
 
-if (! function_exists(__NAMESPACE__ . '\register20Dot3Dot1Dot1')) {
+if (! function_exists(__NAMESPACE__ . '\register20Dot3Dot1Dot2')) {
     if (! defined('PUBLISHPRESS_STRIPE_PHP_INCLUDED')) {
         define('PUBLISHPRESS_STRIPE_PHP_INCLUDED', __DIR__);
     }
@@ -33,17 +33,17 @@ if (! function_exists(__NAMESPACE__ . '\register20Dot3Dot1Dot1')) {
         add_action('plugins_loaded', [VersionLoader::class, 'initializeLatestVersion'], -185, 0);
     }
 
-    add_action('plugins_loaded', __NAMESPACE__ . '\register20Dot3Dot1Dot1', -200, 0);
+    add_action('plugins_loaded', __NAMESPACE__ . '\register20Dot3Dot1Dot2', -200, 0);
 
-    function register20Dot3Dot1Dot1()
+    function register20Dot3Dot1Dot2()
     {
         if (! class_exists('PublishPress\Stripe\StripeClient', false)) {
             $loader = VersionLoader::getInstance();
-            $loader->register('20.3.1.1', __NAMESPACE__ . '\initialize20Dot3Dot1Dot1');
+            $loader->register('20.3.1.2', __NAMESPACE__ . '\initialize20Dot3Dot1Dot2');
         }
     }
 
-    function initialize20Dot3Dot1Dot1()
+    function initialize20Dot3Dot1Dot2()
     {
         if (! class_exists('PublishPress\Stripe\StripeClient', false)
             && ! class_exists('ComposerAutoloaderInitde1e2b81c2026ba3316e422eeadd1fde', false)
@@ -51,9 +51,9 @@ if (! function_exists(__NAMESPACE__ . '\register20Dot3Dot1Dot1')) {
             require_once __DIR__ . '/autoload.php';
         }
         if (! defined('PUBLISHPRESS_STRIPE_PHP_VERSION')) {
-            define('PUBLISHPRESS_STRIPE_PHP_VERSION', '20.3.1.1');
+            define('PUBLISHPRESS_STRIPE_PHP_VERSION', '20.3.1.2');
         }
 
-        do_action('publishpress_stripe_php_20Dot3Dot1Dot1_initialized');
+        do_action('publishpress_stripe_php_20Dot3Dot1Dot2_initialized');
     }
 }
