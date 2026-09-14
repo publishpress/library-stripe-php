@@ -1,2 +1,4 @@
 /vendor/
 /tests/_output/
+.env
+dev-workspace-cache/

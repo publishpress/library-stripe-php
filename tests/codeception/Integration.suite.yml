@@ -1,5 +1,22 @@
+# Codeception Test Suite Configuration
+#
+# Suite for integration tests that require WordPress functions and classes.
+
 actor: IntegrationTester
 modules:
     enabled:
+        - lucatume\WPBrowser\Module\WPLoader
+        - \Helper\Integration
         - Asserts
-        - Helper\Integration
+    config:
+        lucatume\WPBrowser\Module\WPLoader:
+            wpRootFolder: "%WP_TESTS_ROOT_DIR%"
+            dbUrl: "%WP_TESTS_DB_URL%"
+            wpDebug: true
+            tablePrefix: "%WP_TESTS_TEST_TABLE_PREFIX%"
+            domain: "%WP_TESTS_DOMAIN%"
+            adminEmail: "admin@%WP_TESTS_DOMAIN%"
+            title: "Test"
+            # Outdated plugins must load before updated so Versions owns init (priority 2).
+            plugins: ['outdated-lib-plugin-1/outdated-lib-plugin-1.php', 'outdated-lib-plugin-2/outdated-lib-plugin-2.php', 'updated-lib-plugin/updated-lib-plugin.php']
+            activatePlugins: ['outdated-lib-plugin-1/outdated-lib-plugin-1.php', 'outdated-lib-plugin-2/outdated-lib-plugin-2.php', 'updated-lib-plugin/updated-lib-plugin.php']
