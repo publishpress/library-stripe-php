@@ -9,7 +9,7 @@
 CHANGELOG.md
 codeception.dist.yml
 composer.lock
-lib/stripe/.claude
+lib/stripe/.claude/
 lib/stripe/.gitignore
 lib/stripe/CHANGELOG.md
 lib/stripe/CODEGEN_VERSION

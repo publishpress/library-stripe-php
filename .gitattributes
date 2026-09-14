@@ -12,7 +12,7 @@ codeception.dist.yml export-ignore
 codeception.yml export-ignore
 composer.json export-ignore
 composer.lock export-ignore
-lib/stripe/.claude export-ignore
+lib/stripe/.claude/ export-ignore
 lib/stripe/.gitignore export-ignore
 lib/stripe/CHANGELOG.md export-ignore
 lib/stripe/CODEGEN_VERSION export-ignore
