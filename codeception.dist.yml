@@ -1,0 +1,21 @@
+paths:
+    tests: tests/codeception
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+        - Helper\FixtureCopier
+    config:
+        Helper\FixtureCopier:
+            files:
+                "tests/_data/plugins/updated-lib-plugin/": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/updated-lib-plugin"
+                "tests/_data/plugins/outdated-lib-plugin-1": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/outdated-lib-plugin-1"
+                "tests/_data/plugins/outdated-lib-plugin-2": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/outdated-lib-plugin-2"
+                "lib": "%WP_TESTS_ROOT_DIR%/wp-content/plugins/updated-lib-plugin/vendor/publishpress/stripe-php/lib/"
+params:
+    - .env
+bootstrap: _bootstrap.php
