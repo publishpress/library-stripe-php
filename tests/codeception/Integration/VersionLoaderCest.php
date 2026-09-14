@@ -21,7 +21,7 @@ class VersionLoaderCest
         $I->assertEquals([
             '2.0.0.1' => 'PublishPress\StripePhp\initialize2Dot0Dot0Dot1',
             '2.0.0.2' => 'PublishPress\StripePhp\initialize2Dot0Dot0Dot2',
-            '20.3.1.1' => 'PublishPress\StripePhp\initialize20Dot3Dot1Dot1',
+            '20.3.1.2' => 'PublishPress\StripePhp\initialize20Dot3Dot1Dot2',
         ], $registeredVersions);
     }
 
@@ -31,7 +31,7 @@ class VersionLoaderCest
 
         $latestVersion = $loader->latestVersion();
 
-        $I->assertEquals('20.3.1.1', $latestVersion);
+        $I->assertEquals('20.3.1.2', $latestVersion);
     }
 
     public function testLatestVersionCallbackIsTheLastOne(IntegrationTester $I)
@@ -40,7 +40,7 @@ class VersionLoaderCest
 
         $latestVersionCallback = $loader->latestVersionCallback();
 
-        $I->assertEquals('PublishPress\StripePhp\initialize20Dot3Dot1Dot1', $latestVersionCallback);
+        $I->assertEquals('PublishPress\StripePhp\initialize20Dot3Dot1Dot2', $latestVersionCallback);
     }
 
     public function testInitializeLatestVersion(IntegrationTester $I)
@@ -51,7 +51,7 @@ class VersionLoaderCest
 
         $I->assertTrue(class_exists('PublishPress\Stripe\StripeClient'));
 
-        $didAction = (bool)did_action('publishpress_stripe_php_20Dot3Dot1Dot1_initialized');
+        $didAction = (bool)did_action('publishpress_stripe_php_20Dot3Dot1Dot2_initialized');
         $I->assertTrue($didAction);
     }
 }

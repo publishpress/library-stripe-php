@@ -1,6 +1,6 @@
 {
     "name": "publishpress/stripe-php",
-    "version": "20.3.1.1",
+    "version": "20.3.1.2",
     "type": "library",
     "description": "Stripe PHP Library, prefixed for PublishPress",
     "keywords": [
